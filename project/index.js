@@ -13,5 +13,21 @@ Bot.hears('xyz', async ctx=>{
     // await ctx.reply(ctx.update.message.from.id, 'answer to xyz')
 })
 
-console.log('start bot')
+Bot.command('xyz', async ctx=>{
+    console.log('xyz command')
+})
+
+Bot.on('text', async ctx=>{
+    await ctx.reply('это был текст')
+})
+
+Bot.on('photo', async ctx=>{
+    await ctx.reply('это было фото')
+})
+
+Bot.on('document', async ctx=>{
+    await ctx.reply('это было файл')
+})
+
+console.log('xyz command')
 Bot.launch()
